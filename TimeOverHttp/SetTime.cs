@@ -21,7 +21,7 @@ namespace TimeOverHttp
 
         public void SystemTime(DateTime newTime)
         {
-            newTime.ToUniversalTime();
+            newTime = newTime.ToUniversalTime();
             time setTime = new time();
             setTime.Year = (short)newTime.Year;
             setTime.Month = (short)newTime.Month;
