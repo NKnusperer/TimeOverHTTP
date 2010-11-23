@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 [assembly: AssemblyTitle("TimeOverHTTP")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Sync the time over HTTP")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("No Name")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TimeOverHTTP")]
 [assembly: AssemblyCopyright("Copyright © Hendrik Müller 2010")]
 [assembly: AssemblyTrademark("")]

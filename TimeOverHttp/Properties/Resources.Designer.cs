@@ -74,6 +74,13 @@ namespace TimeOverHttp.Properties {
             }
         }
         
+        internal static System.Drawing.Icon clock {
+            get {
+                object obj = ResourceManager.GetObject("clock", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap configure {
             get {
                 object obj = ResourceManager.GetObject("configure", resourceCulture);

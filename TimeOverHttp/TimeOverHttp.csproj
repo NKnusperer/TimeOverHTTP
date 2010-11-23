@@ -51,7 +51,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>clock.ico</ApplicationIcon>
+    <ApplicationIcon>clock_assembly.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -144,7 +144,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="clock.ico" />
+    <Content Include="clock_assembly.ico" />
+    <None Include="Resources\clock.ico" />
+    <None Include="Resources\clock.png" />
     <None Include="Resources\info.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\apply.png" />

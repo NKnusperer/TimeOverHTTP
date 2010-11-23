@@ -130,6 +130,21 @@ Icons are the "Crystal Project Icons" from Everaldo Coelho (www.everaldo.com) un
 
 You need administrator rights to set the systeme clock!</value>
   </data>
+  <data name="textBox4.Text" xml:space="preserve">
+    <value>12/23/2010
+Assembly is now signed
+Added changelog
+Added bigger assembly icon for Windows Vista and 7
+Autostart is now longer enabled on default
+Syncing time now on programm startup
+
+12/22/2010
+Fixed wrong UTC time converting while setting the clock
+Added admin rights under Windows vista and 7
+
+12/21/2010
+Initialize release</value>
+  </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>Copyright (c) 2010 Hendrik Müller
 

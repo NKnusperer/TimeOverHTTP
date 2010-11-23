@@ -96,26 +96,16 @@ namespace TimeOverHttp
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            if (SettingsManager.Autostart == "0")
-            {
-                checkBoxAutostart.Checked = false;
-                SetStartup(false);
-                
-            }
-            else if (SettingsManager.Autostart == "1")
-            {
-                checkBoxAutostart.Checked = true;
-                SetStartup(true);
-            }
-
-            textBoxHttpServer.Text = SettingsManager.HttpServer;
-            textBoxSyncEveryMinutes.Text = SettingsManager.SyncEveryMinutes;
+            loadSettings();
 
             // set timer for time sync in minutes
             timer1.Interval = int.Parse(SettingsManager.SyncEveryMinutes) * 60000;
 
             // start timer for sync
             timer1.Start();
+
+            // sync time now
+            backgroundWorker1.RunWorkerAsync();
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -137,7 +127,6 @@ namespace TimeOverHttp
 
             if (result > reference)
             {
-                timeSetter.SystemTime(result);
                 MessageBox.Show("Connection sucessfully established! \nReceived time: " + result, "Connection OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -162,7 +151,11 @@ namespace TimeOverHttp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            // reset back
+            loadSettings();
+
+            Hide();
+            WindowState = FormWindowState.Minimized;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -180,7 +173,9 @@ namespace TimeOverHttp
                  SetStartup(true);
             }
 
+            // set new timer interval
             timer1.Interval = int.Parse(SettingsManager.SyncEveryMinutes) * 60000;
+
             Hide();
             WindowState = FormWindowState.Minimized;
         }
@@ -211,6 +206,22 @@ namespace TimeOverHttp
             }
         }
 
-        
+        private void loadSettings()
+        {
+            if (SettingsManager.Autostart == "0")
+            {
+                checkBoxAutostart.Checked = false;
+                SetStartup(false);
+
+            }
+            else if (SettingsManager.Autostart == "1")
+            {
+                checkBoxAutostart.Checked = true;
+                SetStartup(true);
+            }
+
+            textBoxHttpServer.Text = SettingsManager.HttpServer;
+            textBoxSyncEveryMinutes.Text = SettingsManager.SyncEveryMinutes;
+        }
     }
 }
